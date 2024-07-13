@@ -1,0 +1,248 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #000000 0%, #306770 50%, #000833 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
+}
+
+
+header {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navHead {
+    display: flex;
+    align-items: center;
+}
+
+.navHead h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hamburger-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-menu.active::before {
+    content: 'x';
+    /* Unicode for the cross icon */
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+
+.white {
+    color: white !important;
+}
+
+.textPadding {
+    color: #000000;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.container {
+    width: calc(100% - 40px);
+    max-width: 90vw;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1,
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: disc;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #000;
+    text-align: right;
+    list-style: lower-alpha;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    resize: none;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+#outputChords {
+    box-shadow: 0 0 0 2px #007bff;
+    background-color: rgba(255, 255, 255, 0.95);
+    outline: #007bff;
+}
+
+#outputChords:focus {
+    outline: #ff0000;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transposeBtn {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 400px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #007bff, #00bfff);
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 1rem;
+    }
+    button {
+        width: 250px;
+        padding: 10px 30px;
+    }
+    .transposeBtn {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .controls{
+        flex-direction: column;
+        gap: 10px;
+    }
+    select{
+        width: 250px;
+    }
+
+    
+    .navHead>h1{
+        font-size: 2rem;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        width: 30%;
+        background-color: #33333398;
+        text-align: center;
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 10px;
+        border: 1px solid white;
+        box-shadow: 0 0 5px white;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 15px 0;
+        width: 100%;
+        display: block;
+    }
+}
+
+select {
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    appearance: none;
+    cursor: pointer;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #007bff;
+}

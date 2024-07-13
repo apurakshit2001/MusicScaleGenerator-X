@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chord Transposer</title>
+    <link rel="stylesheet" href="./transpose.css">
+    <script src="transpose.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="navHead">
+            <h1 class="white">Musique🎶 Scale Generator</h1>
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="./Documentation/about.html">Documentation</a>
+            <a href="./transpose.html">Chords Transpose</a>
+            <a href="https://apurakshit2001.github.io/profile-front/">Contact</a>
+        </nav>
+    </header>
+    <div class="container ">
+        <h1 class="white">Welcome to the Chord Transposition Tool! This page allows you to effortlessly transpose your chord
+            progressions to different keys with just a few clicks.</h1>
+        <h3 class="textPadding">How It Works:</h3>
+        <ul class="white">
+            <li>Input Your Chord Progression: Start by entering your chord progression into the input field. For
+                example, type 'C, Am, F, G'.</li>
+            <li>Transpose Forward or Backward: Use the plus (+) symbol to transpose the chords forward or the minus (-)
+                symbol to transpose them backward. For instance, clicking the plus symbol twice after entering 'C, Am,
+                F, G' will change it to 'D, Bm, G, A'. Clicking the minus symbol once will change it to 'C#, A#m, F#,
+                G#'.</li>
+            <li>Flexibility: You have the freedom to input and transpose any complex chord progression of any length.
+                Simply type in your chords and adjust as needed.</li>
+        </ul>
+        <textarea id="inputChords" placeholder="Enter your chord progression here"></textarea>
+        <div class="controls">
+            <select id="notationSelect" onchange="changeNotation()">
+                <option value="sharp">Sharps (e.g., C#)</option>
+                <option value="flat">Flats (e.g., Db)</option>
+            </select>
+            <div class="transposeBtn">
+                <button id="transposeForward" onclick="transposeChords('+')">+</button>
+                <button id="transposeBackward" onclick="transposeChords('-')">-</button>
+            </div>
+        </div>
+        <textarea id="outputChords" placeholder="Resulting chord progression will appear here" readonly></textarea>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #000000 0%, #306770 50%, #000833 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+}
+
+
+main {
+    max-width: 1200px;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.black {
+    color: black;
+}
+strong {
+    color: white;
+}
+
+
+.navHead {
+    display: flex;
+    align-items: center;
+}
+
+.navHead h1 {
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+.hamburger-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-menu.active::before {
+    content: 'x';
+    /* Unicode for the cross icon */
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* Content Styles */
+.content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    backdrop-filter: blur(50px);
+    margin: 20px auto;
+    /* Ensure it's centered with auto margins */
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p,
+ul,
+ol {
+    font-size: 1.2em;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.notesName {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+}
+
+ul,
+ol {
+    padding-left: 20px;
+}
+
+ul li,
+ol li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+footer a {
+    color: #de5d83;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 120px;
+        right: 10px;
+        width: 30%;
+        background-color: #33333398;
+        text-align: center;
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 10px;
+        border: 1px solid white;
+        box-shadow: 0 0 5px white;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 15px 0;
+        width: 100%;
+        display: block;
+    }
+
+    main {
+        border: 1px solid rgb(255, 255, 255);
+        width: 100vw;
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        width: 100vw;
+    }
+
+    .content {
+        padding: 20px;
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 0 0 15px black;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 100;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p,
+    ul,
+    ol {
+        font-size: 1em;
+    }
+}

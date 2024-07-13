@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/pngkey.com-guitar-logo-png-7634401.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Musique Scale Generator</title>
+</head>
+
+<body>
+<main>
+    <header>
+        <div class="navHead">
+            <h1>Musique🎶 Scale Generator</h1>
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="./Documentation/about.html">Documentation</a>
+            <a href="./Transpose/transpose.html">Chords Transpose</a>
+            <a href="https://apurakshit2001.github.io/profile-front/">Contact</a>
+        </nav>
+    </header>
+    
+   
+    <div class="description">
+        <p>The 12 notes are :</p>
+        <p>
+            ❝ C - C# - D - D# - E - F - F# - G - G# - A - A# - B ❞ /
+            <br><br>
+            ❝ C - D♭ - D - E♭ - E - F - G♭ - G - A♭ - A - B♭ - B ❞
+        </p>
+        <p>Choose a note and a scale type to generate the scale.</p>
+        <p># are called sharp</p>
+        <p>♭ are called flat</p>
+    </div>
+
+    <div class="ScaleGenerator">
+        <h1 id="heading">Enter any note to receive its desired scale.</h1>
+        <h1 id="Scale"></h1>
+        <div class="input-container">
+            <select id="noteInput" class="input">
+                <option value="" disabled selected>Select a note ▼</option>
+                <option value="C">C</option>
+                <option value="C#">C# / D♭</option>
+                <option value="D">D</option>
+                <option value="D#">D# / E♭</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F# / G♭</option>
+                <option value="G">G</option>
+                <option value="G#">G# / A♭</option>
+                <option value="A">A</option>
+                <option value="A#">A# / B♭</option>
+                <option value="B">B</option>
+            </select>
+            <button class="button-9 reset" role="button" onclick="reset()">Reset</button>
+        </div>
+        <div class="moBbtns">
+            <button class="button-9" role="button" onclick="majorScale()">Major Scale (Ionian mode)</button>
+            <button class="button-9" role="button" onclick="minorScale()">Natural Minor Scale (Aeolian mode)</button>
+            <button class="button-9" role="button" onclick="maJchord()">Major Chord Notes</button>
+            <button class="button-9" role="button" onclick="miNchord()">Minor Chord Notes</button>
+            <button class="button-9" role="button" onclick="harmonicMinor()">Harmonic Minor Scale</button>
+            <button class="button-9" role="button" onclick="melodicMinor()">Melodic Minor Scale</button>
+            <button class="button-9" role="button" onclick="blues()">Blues Scale</button>
+            <button class="button-9" role="button" onclick="dorian()">Dorian Mode</button>
+            <button class="button-9" role="button" onclick="phrygian()">Phrygian Mode</button>
+            <button class="button-9" role="button" onclick="lydian()">Lydian Mode</button>
+            <button class="button-9" role="button" onclick="mixolydian()">Mixolydian Mode</button>
+            <button class="button-9" role="button" onclick="locrian()">Locrian Mode</button>
+        </div>
+    </div>
+    <div class="btns">
+        <button class="button-9" role="button" onclick="majorScale()">Major Scale (Ionian mode)</button>
+        <button class="button-9" role="button" onclick="minorScale()">Natural Minor Scale (Aeolian mode)</button>
+        <button class="button-9" role="button" onclick="maJchord()">Major Chord Notes</button>
+        <button class="button-9" role="button" onclick="miNchord()">Minor Chord Notes</button>
+        <button class="button-9" role="button" onclick="harmonicMinor()">Harmonic Minor Scale</button>
+        <button class="button-9" role="button" onclick="melodicMinor()">Melodic Minor Scale</button>
+        <button class="button-9" role="button" onclick="blues()">Blues Scale</button>
+        <button class="button-9" role="button" onclick="dorian()">Dorian Mode</button>
+        <button class="button-9" role="button" onclick="phrygian()">Phrygian Mode</button>
+        <button class="button-9" role="button" onclick="lydian()">Lydian Mode</button>
+        <button class="button-9" role="button" onclick="mixolydian()">Mixolydian Mode</button>
+        <button class="button-9" role="button" onclick="locrian()">Locrian Mode</button>
+    </div>
+</main>
+    <footer>
+        <p>&copy; 2024 Musique Scale Generator. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@musique.com">info@musique.com</a></p>
+    </footer>
+</body>
+
+</html>
