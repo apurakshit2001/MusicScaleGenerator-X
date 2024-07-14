@@ -17,13 +17,14 @@
         </div>
         <nav class="navbar" id="navbar">
             <a href="../index.html">Home</a>
-            <a href="./Documentation/about.html">Documentation</a>
+            <a href="../Documentation/about.html">Documentation</a>
             <a href="./transpose.html">Chords Transpose</a>
             <a href="https://apurakshit2001.github.io/profile-front/">Contact</a>
         </nav>
     </header>
     <div class="container ">
-        <h1 class="white">Welcome to the Chord Transposition Tool! This page allows you to effortlessly transpose your chord
+        <h1 class="white">Welcome to the Chord Transposition Tool! This page allows you to effortlessly transpose your
+            chord
             progressions to different keys with just a few clicks.</h1>
         <h3 class="textPadding">How It Works:</h3>
         <ul class="white">
@@ -43,8 +44,8 @@
                 <option value="flat">Flats (e.g., Db)</option>
             </select>
             <div class="transposeBtn">
-                <button id="transposeForward" onclick="transposeChords('+')">+</button>
-                <button id="transposeBackward" onclick="transposeChords('-')">-</button>
+                <button id="transposeForward" onclick="transposeProgression(-1)">+</button>
+                <button id="transposeBackward" onclick="transposeProgression(1)">-</button>
             </div>
         </div>
         <textarea id="outputChords" placeholder="Resulting chord progression will appear here" readonly></textarea>

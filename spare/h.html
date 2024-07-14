@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="inputChords" placeholder="Enter your chord progression here"></textarea>
+    <div class="controls">
+        <select id="notationSelect" onchange="changeNotation()">
+            <option value="sharp">Sharps (e.g., C#)</option>
+            <option value="flat">Flats (e.g., Db)</option>
+        </select>
+        <div class="transposeBtn">
+            <button id="transposeForward" onclick="transposeProgression(-1)">+</button>
+            <button id="transposeBackward" onclick="transposeProgression(1)">-</button>
+        </div>
+    </div>
+    <textarea id="outputChords" placeholder="Resulting chord progression will appear here" readonly></textarea>
+    <script>
+
+        function transposeChord(chord, semitones) {
+            const chords = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            let root = chord.match(/^[A-G]#?/)[0];
+            let modifier = chord.slice(root.length);
+            let currentIndex = chords.indexOf(root);
+            let newIndex = (currentIndex + semitones + 12) % 12;
+            return chords[newIndex] + modifier;
+        }
+
+        function transposeProgression(semitones) {
+            let progression = document.getElementById('chordProgression').value;
+            let chordsArray = progression.split(/\s+/);
+            let transposedChords = chordsArray.map(chord => transposeChord(chord, semitones));
+            document.getElementById('inputChords').value = transposedChords.join(',');
+            document.getElementById('outputChords').innerText = `Transposed Chord Progression: ${transposedChords.join(',')}`;
+        }
+
+        function changeNotation() {
+            const sharpChords = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            const flatChords = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+            let useSharps = document.getElementById('notationSelect').value === 'sharp';
+            let progression = document.getElementById('inputChords').value;
+            let chordsArray = progression.split(/\s+/);
+
+            let transposedChords = chordsArray.map(chord => {
+                let rootMatch = chord.match(/^[A-G][#b]?/);
+                if (!rootMatch) return chord; // Return the chord as is if it doesn't match the pattern
+                let root = rootMatch[0];
+                let modifier = chord.slice(root.length);
+                let currentIndex = sharpChords.indexOf(root);
+                if (currentIndex === -1) {
+                    currentIndex = flatChords.indexOf(root);
+                }
+                if (currentIndex === -1) return chord; // Return the chord as is if it's not found in either array
+                return useSharps ? sharpChords[currentIndex] + modifier : flatChords[currentIndex] + modifier;
+            });
+
+            document.getElementById('outputChords').value = transposedChords.join(',');
+            document.getElementById('inputChords').value = transposedChords.join(',');
+        }
+    </script>
+</body>
+
+</html>

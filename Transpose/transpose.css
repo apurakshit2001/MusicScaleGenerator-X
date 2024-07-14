@@ -137,6 +137,7 @@ textarea:focus {
     box-shadow: 0 0 0 2px #007bff;
     background-color: rgba(255, 255, 255, 0.95);
     outline: #007bff;
+    font-size: 30px;
 }
 
 #outputChords:focus {
@@ -174,6 +175,9 @@ button:hover {
 }
 
 @media screen and (max-width: 700px) {
+    #outputChords {
+        font-size: 20px;
+    }
     h1 {
         font-size: 1rem;
     }

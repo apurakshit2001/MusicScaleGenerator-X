@@ -37,9 +37,11 @@ header {
     width: 100%;
     box-sizing: border-box;
 }
+
 .black {
     color: black;
 }
+
 strong {
     color: white;
 }
@@ -174,21 +176,25 @@ footer a:hover {
     }
 
     main {
-        border: 1px solid rgb(255, 255, 255);
-        width: 100vw;
+        max-width: 100%;
         margin: 0;
     }
 }
 
 @media (max-width: 600px) {
     body {
-        padding: 0;
-        width: 100vw;
+        padding: 20px;
+        width: fit-content;
+        text-align: justify;
+    }
+
+    .main {
+        text-align: justify;
+        padding: 10px;
     }
 
     .content {
         padding: 20px;
-        border: 1px solid rgb(255, 255, 255);
         box-shadow: 0 0 15px black;
         font-family: 'Times New Roman', Times, serif;
         font-weight: 100;
